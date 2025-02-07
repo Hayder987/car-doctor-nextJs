@@ -1,8 +1,11 @@
+import About from "@/components/HomeComonents/About"
 
 
 const aboutPage = () => {
   return (
-    <div>aboutPage</div>
+    <div>
+      <About></About>
+    </div>
   )
 }
 

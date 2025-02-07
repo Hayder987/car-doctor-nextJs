@@ -26,7 +26,7 @@ const Banner = () => {
         modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
         autoplay={{
-          delay: 4000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         speed={1000}
@@ -46,7 +46,7 @@ const Banner = () => {
           <Slide
             banner={banner2}
             nxtBanner={banner3}
-            title={"Affordable Price For Car Servicing"}
+            title={"Get Your Car Serviced Without Breaking the Bank"}
             desc={
               "There are many variations of passages of  available, but the majority have suffered alteration in some form"
             }
@@ -56,7 +56,7 @@ const Banner = () => {
           <Slide
             banner={banner3}
             nxtBanner={banner4}
-            title={"Affordable Price For Car Servicing"}
+            title={"Budget-Friendly Car Maintenance for Every Driver"}
             desc={
               "There are many variations of passages of  available, but the majority have suffered alteration in some form"
             }
@@ -66,7 +66,7 @@ const Banner = () => {
         <Slide
             banner={banner4}
             nxtBanner={banner5}
-            title={"Affordable Price For Car Servicing"}
+            title={"Top-Quality Car Repairs at Affordable Rates"}
             desc={
               "There are many variations of passages of  available, but the majority have suffered alteration in some form"}
           ></Slide>
@@ -75,7 +75,7 @@ const Banner = () => {
         <Slide
             banner={banner5}
             nxtBanner={banner6}
-            title={"Affordable Price For Car Servicing"}
+            title={"Reliable and Cost-Effective Car Servicing Solutions"}
             desc={
               "There are many variations of passages of  available, but the majority have suffered alteration in some form"}
           ></Slide>
@@ -84,7 +84,7 @@ const Banner = () => {
         <Slide
             banner={banner6}
             nxtBanner={banner1}
-            title={"Affordable Price For Car Servicing"}
+            title={"Expert Car Care at Prices You Can Afford"}
             desc={
               "There are many variations of passages of  available, but the majority have suffered alteration in some form"}
           ></Slide>

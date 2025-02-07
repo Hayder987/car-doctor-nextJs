@@ -21,7 +21,7 @@ const Slide = ({ title, desc, banner, nxtBanner }) => {
       <div className="lg:w-1/2 p-10 lg:px-20">
         <h1 className="text-4xl md:text-6xl mb-6 lg:mb-12 font-bold text-white">{title}</h1>
         <p className="text-xl font-medium mb-6 lg:mb-12 text-gray-300">{desc}</p>
-        <Link href={'/about'} className="py-3 px-5 bg-red-600 cursor-pointer text-white font-semibold">Discover More</Link>
+        <Link href={'/services'} className="py-3 px-5 hover:duration-300 hover:border-2 hover:border-red-600 hover:text-red-600 hover:bg-transparent bg-red-600 cursor-pointer text-white font-semibold">Discover More</Link>
       </div>
       {/* image */}
       <div className="hidden lg:flex lg:w-1/2">
