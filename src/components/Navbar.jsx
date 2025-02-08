@@ -24,7 +24,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
+    <div className="sticky z-10 top-0">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -51,7 +51,7 @@ const Navbar = () => {
               {navMenu}
             </ul>
           </div>
-          <Link href={'/'}>
+          <Link href={'/'} className="hidden md:flex">
            <Image className="w-20 h-20 md:w-28 md:h-28 rounded-full" src={logo} alt="logo"/>
           </Link>
         </div>
@@ -59,10 +59,14 @@ const Navbar = () => {
           <ul className="menu menu-horizontal text-base px-1">{navMenu}</ul>
         </div>
         <div className="navbar-end">
+          
           <div className="flex items-center gap-6">
             <div className="">
                 <p className="text-xl"><BsBagCheckFill /></p>
             </div>
+            <div className="">
+            <Link href={'/register'}><button className="bg-red-600 text-white px-4 py-2">Sign Up</button></Link>
+          </div>
             {/* button*/}
             <Link href={'/'} className="px-6 py-2 text-red-600 duration-300 hover:bg-red-600 hover:text-white font-semibold border-2 border-red-600">Appointment</Link>
           </div>
