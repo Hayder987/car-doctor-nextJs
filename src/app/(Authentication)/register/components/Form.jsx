@@ -1,10 +1,8 @@
 "use client"
-import { FaFacebook } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
-import { FaLinkedinIn } from "react-icons/fa";
 import { registerUser } from "@/app/action/auth/registerUser";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
+import SocialLogin from "../../socialLogin/SocialLogin";
 
 
 const RegisterForm = () => {
@@ -84,17 +82,8 @@ const RegisterForm = () => {
         />
       </form>
       <p className="text-center my-6">Or Sign Up with</p>
-      <div className="flex justify-center mb-10 items-center gap-8 text-3xl">
-        <button className="">
-          <FcGoogle />
-        </button>
-        <button className="text-blue-600">
-          <FaFacebook />
-        </button>
-        <button className="text-blue-800">
-          <FaLinkedinIn />
-        </button>
-      </div>
+      {/* social login */}
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
