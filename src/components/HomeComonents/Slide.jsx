@@ -25,7 +25,7 @@ const Slide = ({ title, desc, banner, nxtBanner }) => {
       </div>
       {/* image */}
       <div className="hidden lg:flex lg:w-1/2">
-      <Image src={nxtBanner}></Image>
+      <Image src={nxtBanner} alt='photo'></Image>
       </div>
     </div>
   );

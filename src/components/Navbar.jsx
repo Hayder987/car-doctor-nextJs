@@ -1,9 +1,12 @@
+"use client";
 import Link from "next/link";
-import logo from '@/assets/icons/logo.png'
+import logo from "@/assets/icons/logo.png";
 import Image from "next/image";
 import { BsBagCheckFill } from "react-icons/bs";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session, status } = useSession();
   const navMenu = (
     <>
       <li>
@@ -51,24 +54,51 @@ const Navbar = () => {
               {navMenu}
             </ul>
           </div>
-          <Link href={'/'} className="hidden md:flex">
-           <Image className="w-20 h-20 md:w-28 md:h-28 rounded-full" src={logo} alt="logo"/>
+          <Link href={"/"} className="hidden md:flex">
+            <Image
+              className="w-20 h-20 md:w-28 md:h-28 rounded-full"
+              src={logo}
+              alt="logo"
+            />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal text-base px-1">{navMenu}</ul>
         </div>
         <div className="navbar-end">
-          
           <div className="flex items-center gap-6">
             <div className="">
-                <p className="text-xl"><BsBagCheckFill /></p>
+              <p className="text-xl">
+                <BsBagCheckFill />
+              </p>
             </div>
             <div className="">
-            <Link href={'/register'}><button className="bg-red-600 text-white px-4 py-2">Sign Up</button></Link>
-          </div>
+              {status === "authenticated" ? (
+                <>
+                  <button
+                  onClick={()=>signOut()}
+                   className="bg-red-600 text-white px-4 py-2">
+                    Log Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link href={"/register"}>
+                    <button className="bg-red-600 text-white px-4 py-2">
+                      Sign Up
+                    </button>
+                  </Link>
+                  
+                </>
+              )}
+            </div>
             {/* button*/}
-            <Link href={'/'} className="px-6 py-2 text-red-600 duration-300 hover:bg-red-600 hover:text-white font-semibold border-2 border-red-600">Appointment</Link>
+            <Link
+              href={"/"}
+              className="px-6 py-2 text-red-600 duration-300 hover:bg-red-600 hover:text-white font-semibold border-2 border-red-600"
+            >
+              Appointment
+            </Link>
           </div>
         </div>
       </div>

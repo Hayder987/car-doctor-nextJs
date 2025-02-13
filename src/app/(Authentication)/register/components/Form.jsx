@@ -4,8 +4,11 @@ import { FcGoogle } from "react-icons/fc";
 import { FaLinkedinIn } from "react-icons/fa";
 import { registerUser } from "@/app/action/auth/registerUser";
 import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
+
 
 const RegisterForm = () => {
+  const router = useRouter()
     const handleSubmit = async (e)=>{
       e.preventDefault()
     const form = e.target;
@@ -22,7 +25,7 @@ const RegisterForm = () => {
         timer: 1500
       });
       form.reset()
-     
+      router.push('/login')
     }
     catch(err){
         Swal.fire(`${err.message}`);

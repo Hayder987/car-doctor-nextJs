@@ -1,16 +1,37 @@
-"use client"
+"use client";
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { FaLinkedinIn } from "react-icons/fa";
+import { signIn } from "next-auth/react";
+import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
+
 
 const LoginForm = () => {
-    const handleSubmit = async (e)=>{
-        e.preventDefault()
-      const form = e.target;
-      const email = form.email.value;
-      const password = form.password.value;
-       console.log( email, password)
-      }
+  const router = useRouter()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+   try{
+    const res = await signIn("credentials", {
+      email,
+      password,
+      redirect:false,
+    });
+    if(res.ok){
+     router.push('/')
+    }
+    else{
+      Swal.fire(`Authenction Failed`);
+    }
+   }
+   catch(err){
+    
+   }
+   
+  };
 
   return (
     <div>
