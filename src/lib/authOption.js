@@ -20,9 +20,7 @@ export const authOptions = {
               return user
             } else {
              
-              return null
-      
-              
+              return null           
             }
           }
         }),

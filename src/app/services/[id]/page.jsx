@@ -1,16 +1,17 @@
 import SectionBanner from "@/components/HomeComonents/SectionBanner";
 import StepCard from "@/components/HomeComonents/StepCard";
 import SectionDivider from "@/components/SectionDivider";
-import dbConnect, { dbCollection } from "@/lib/dbConnect";
-import { ObjectId } from "mongodb";
 import Image from "next/image";
 import logo from "@/assets/icons/logo.png";
+import axios from "axios";
+import Link from "next/link";
 
 const serviceDetails = async ({ params }) => {
   const { id } = await params;
-  const data = await dbConnect(dbCollection.serviceType).findOne({
-    _id: new ObjectId(id),
-  });
+  const { data } = await axios.get(
+    `${process.env.SERVER_HTTP}/api/service/${id}`
+  );
+
   return (
     <div className="container mx-auto">
       <SectionBanner title={"Service Details"}></SectionBanner>
@@ -20,7 +21,7 @@ const serviceDetails = async ({ params }) => {
         <div className="lg:w-9/12 relative">
           <div className="relative mb-10 h-[420px] lg:h-[550px] w-full">
             <Image
-              src={data.img}
+              src={data?.img}
               alt="img"
               layout="fill"
               objectFit="cover"
@@ -60,9 +61,11 @@ const serviceDetails = async ({ params }) => {
             ></StepCard>
           </div>
           <div className="sticky flex lg:hidden z-10 bottom-0">
+          <Link href={`/cheackOut/${data?._id}`}>
             <button className="w-full text-center py-3 px-6 bg-red-600 text-white font-medium">
               Proceed Checkout
             </button>
+          </Link>
           </div>
         </div>
         {/* sidebar */}
@@ -83,9 +86,11 @@ const serviceDetails = async ({ params }) => {
             </div>
           </div>
           <h3 className="text-2xl font-bold mb-8">Price: ${data.price}</h3>
-          <button className="w-full text-center py-3 px-6 bg-red-600 text-white font-medium">
-            Proceed Checkout
-          </button>
+          <Link href={`/cheackOut/${data?._id}`}>
+            <button className="w-full text-center py-3 px-6 bg-red-600 text-white font-medium">
+              Proceed Checkout
+            </button>
+          </Link>
         </div>
       </div>
       <SectionDivider></SectionDivider>

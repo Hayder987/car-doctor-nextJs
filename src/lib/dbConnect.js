@@ -2,7 +2,8 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 
 export const dbCollection = {
     serviceType: "serviceType",
-    userType : "userCollection"
+    userType : "userCollection",
+    bookingType: "bookingCollection"
 }
 
 const dbConnect = (collectionName) => {
