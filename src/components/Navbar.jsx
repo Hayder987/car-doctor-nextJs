@@ -68,19 +68,22 @@ const Navbar = () => {
         <div className="navbar-end">
           <div className="flex items-center gap-6">
             <div className="">
-              <p className="text-xl">
-                <BsBagCheckFill />
-              </p>
-            </div>
-            <div className="">
               {status === "authenticated" ? (
-                <>
+                <div className="flex items-center gap-6">
+                  <div className="">
+                    <Link href={'/bookingCart'}>
+                    <button className="text-2xl">
+                      <BsBagCheckFill />
+                    </button>
+                    </Link>
+                  </div>
                   <button
-                  onClick={()=>signOut()}
-                   className="bg-red-600 text-white px-4 py-2">
+                    onClick={() => signOut()}
+                    className="bg-red-600 text-white px-4 py-2"
+                  >
                     Log Out
                   </button>
-                </>
+                </div>
               ) : (
                 <>
                   <Link href={"/register"}>
@@ -88,7 +91,6 @@ const Navbar = () => {
                       Sign Up
                     </button>
                   </Link>
-                  
                 </>
               )}
             </div>
