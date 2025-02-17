@@ -71,7 +71,7 @@ const Navbar = () => {
               {status === "authenticated" ? (
                 <div className="flex items-center gap-6">
                   <div className="">
-                    <Link href={'/bookingCart'}>
+                    <Link href={'/bookingcart'}>
                     <button className="text-2xl">
                       <BsBagCheckFill />
                     </button>

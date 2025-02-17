@@ -5,7 +5,7 @@ import CheckOutForm from "../CheckOutForm";
 
 const page =async ({params}) => {
     const { id } = await params;
-    const {data} =await axios.get(`${process.env.SERVER_HTTP}/api/service/${id}`)
+    const {data} = await axios.get(`${process.env.SERVER_HTTP}/api/service/${id}`)
   return (
     <div>
      <SectionBanner title={"Check Out"}></SectionBanner>

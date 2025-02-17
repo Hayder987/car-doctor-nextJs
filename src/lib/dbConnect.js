@@ -7,9 +7,7 @@ export const dbCollection = {
 }
 
 const dbConnect = (collectionName) => {
-    const uri =
-      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.7ya1e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-    
+      const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.bixye.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;  
     const client = new MongoClient(uri, {
       serverApi: {
         version: ServerApiVersion.v1,

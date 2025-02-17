@@ -16,7 +16,7 @@ export const authOptions = {
             
             const user = await loginUser(credentials)
             if (user) {
-            
+              console.log("user Data",user)
               return user
             } else {
              
